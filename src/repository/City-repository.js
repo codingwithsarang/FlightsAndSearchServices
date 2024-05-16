@@ -1,10 +1,9 @@
-
-const { where } = require('sequelize')
 const {City} = require('../models/index')
 
 
 
-class CityRepository{
+class CityRepository {
+
     async createCity({name}){
         try{
             const city = await City.create({name})

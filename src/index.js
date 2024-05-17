@@ -1,7 +1,7 @@
 const express = require('express')
 const {PORT} = require("./config/serverConfig.js")
 const bodyParser = require('body-parser')
-const {Airport, City} = require('./models/index.js')
+const {Airport, City, Airplane} = require('./models/index.js')
 const db = require('./models/index.js')
 const sequelize = require('sequelize')
 

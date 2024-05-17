@@ -15,5 +15,6 @@ router.post('/airport',AirportController.createAirport )
 router.get('/airport/:id',AirportController.getAirport)
 router.patch('/airport/:id',AirportController.updateAirport)
 router.delete('/airport/:id',AirportController.deleteAirport)
+router.get('/airportbycity/:id',AirportController.getAirportByCity)
 
 module.exports = router 

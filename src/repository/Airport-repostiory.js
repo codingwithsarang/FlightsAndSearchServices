@@ -47,6 +47,20 @@ class AirportRepository{
             throw {error}
         }
     }
+
+    async getAirportByCity(cityId){
+        try {
+            const airports = await Airport.findAll({
+                where: {
+                    cityId: cityId
+                }
+            })
+            return airports
+        } catch (error) {
+            console.log('Something went wrong in repository layer')
+            throw error
+        }
+    }
 }
 
 module.exports = AirportRepository

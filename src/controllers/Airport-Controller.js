@@ -78,10 +78,30 @@ const deleteAirport = async(req,res)=>{
         })
     }
 }
+const getAirportByCity = async(req,res)=>{
+    try {
+        const response = await airportService.findByCity(req.params.id)
+        return res.status(200).json({
+            data: response,
+            success: true,
+            message: "successfully fetched airports",
+            error: {}
+        })
+    } catch (error) {
+        console.log('something went wrong on controller layer')
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: "Not able to fetch airports",
+            error: {error}
+        })
+    }
+}
 
 module.exports = {
     createAirport,
     getAirport,
     updateAirport,
-    deleteAirport
+    deleteAirport,
+    getAirportByCity
 }

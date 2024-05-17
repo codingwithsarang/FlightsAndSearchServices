@@ -14,6 +14,15 @@ class CityService{
                 throw {error}
             }
         }
+        async createMultipleCity(data){
+            try {
+                const cities = await this.cityRepository.createMultipleCities(data)
+                return cities
+            } catch (error) {
+                console.log('something went wrong on service layer')
+                throw {error}
+            }
+        }
 
         async getCity(cityId){
             try {

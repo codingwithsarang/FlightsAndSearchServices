@@ -22,6 +22,7 @@ router.get('/airportbycity/:id',AirportController.getAirportByCity)
 
 //flight routes
 router.post('/flights',FlightController.create )
+router.get('/flights',FlightController.getAll)
 
 
 

@@ -1,57 +1,12 @@
-const {AirportRepository} = require('../repository/index.js')
+const { AirportRepository } = require("../repository/index");
+const CrudService = require("./Crud-service");
 
-class AirportService{
+class AirportService extends CrudService{
     constructor(){
-        this.airportRepository = new AirportRepository();
-    }
-
-    async create(data){
-        try {
-            const responce = await this.airportRepository.createAirport(data)
-            return responce
-        } catch (error) {
-            console.log('something went wrong on service layer')
-            throw {error}
-        }
-    }
-
-    async get(id){
-        try {
-            const responce = await this.airportRepository.getAirport(id)
-            return responce
-        } catch (error) {
-            console.log('something went wrong on service layer')
-            throw {error}
-        }
-    }
-    async update(id, data){
-        try {
-            const responce = await this.airportRepository.updateAirport(id ,data)
-            return responce
-        } catch (error) {
-            console.log('something went wrong on service layer')
-            throw {error}
-        }
-    }
-    async delete(id){
-        try {
-            const responce = await this.airportRepository.deleteAirport(id )
-            return responce
-        } catch (error) {
-            console.log('something went wrong on service layer')
-            throw {error}
-        }
-    }
-
-    async findByCity(id){
-        try {
-            const respose = await this.airportRepository.getAirportByCity(id)
-            return respose
-        } catch (error) {
-            g('something went wrong on service layer')
-            throw {error}
-        }
+        const airportRepository = new AirportRepository()
+        super(airportRepository)
     }
 }
+
 
 module.exports = AirportService
